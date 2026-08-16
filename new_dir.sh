@@ -8,5 +8,5 @@ cd ${CHAPTER_DIR}
 cp -r ../template ${LESSON_DIR}/
 cd ${LESSON_DIR}
 mv temp.go ${LESSON_DIR}.go
-mv temp_test.go ${LESSON_DIR}_temp.go
+mv temp_test.go ${LESSON_DIR}_test.go
 
