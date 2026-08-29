@@ -11,10 +11,10 @@ func isValidPassword(password string) bool {
 		return false
 	}
 	for i := 0; i < pLen; i++ {
-		if unicode.IsDigit(rPassword[i]) {
+		if !hasDigit && unicode.IsDigit(rPassword[i]) {
 			hasDigit = true
 		}
-		if unicode.IsUpper(rPassword[i]) {
+		if !hasUpper && unicode.IsUpper(rPassword[i]) {
 			hasUpper = true
 		}
 		if hasUpper && hasDigit {
