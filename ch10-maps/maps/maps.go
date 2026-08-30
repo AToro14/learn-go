@@ -9,6 +9,8 @@ func getUserMap(names []string, phoneNumbers []int) (map[string]user, error) {
 	}
 	for i := 0; i < len(names); i++ {
 		usersMap[names[i]] = user{name: names[i], phoneNumber: phoneNumbers[i]}
+		// for i, name := range names {
+		// 	usersMap[name] = user{name: name, phoneNumber: phoneNumbers[i]}
 	}
 	return usersMap, nil
 }
