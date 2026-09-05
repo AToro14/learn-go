@@ -3,8 +3,10 @@
 CHAPTER_DIR=${1}
 LESSON_DIR=${2}
 
-cd /c/Users/Anthony/Desktop/Code/boot.dev/learn-go
-cd ${CHAPTER_DIR} || echo "Making it now!" && mkdir ${CHAPTER_DIR} && cd ${CHAPTER_DIR}
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+cd ${SCRIPT_DIR}
+
+cd ${CHAPTER_DIR} || { echo "Making it now!" && mkdir ${CHAPTER_DIR} && cd ${CHAPTER_DIR}; }
 cp -r ../template ${LESSON_DIR}/
 cd ${LESSON_DIR}
 mv temp.go ${LESSON_DIR}.go
