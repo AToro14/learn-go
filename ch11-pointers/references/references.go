@@ -4,8 +4,12 @@ import "strings"
 
 func removeProfanity(message *string) {
 	// message is a string pointer
-	*message = strings.ReplaceAll(*message, "fubb", "****")
-	*message = strings.ReplaceAll(*message, "shiz", "****")
-	*message = strings.ReplaceAll(*message, "witch", "*****")
-
+	if message == nil {
+		return
+	}
+	msgCopy := *message
+	msgCopy = strings.ReplaceAll(msgCopy, "fubb", "****")
+	msgCopy = strings.ReplaceAll(msgCopy, "shiz", "****")
+	msgCopy = strings.ReplaceAll(msgCopy, "witch", "*****")
+	*message = msgCopy
 }
