@@ -1,9 +1,9 @@
 package main
 
 func addEmailsToQueue(emails []string) chan string {
-	ch := make(chan string, len(emails))
-	for i := range len(emails) {
-		ch <- emails[i]
+	emailBatch := make(chan string, len(emails))
+	for _, email := range emails {
+		emailBatch <- email
 	}
-	return ch
+	return emailBatch
 }
